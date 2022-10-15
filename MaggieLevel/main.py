@@ -10,37 +10,29 @@ def obtenerPerso():
   # Obtenemos valor en la clave 'character' del JSON que nos interesa
   dic:str = datos[0]
   return dic
-'''
-#Definición de cabecera de los csv
-cabecera = ["quote", "character", "image", "characterDirection"]
-with open("/Homer/Homer.csv", "a+", newline ='') as csvfile:
-      wr = csv.writer(csvfile, dialect='excel', delimiter=',', lineterminator=';')
-      wr.writerow(cabecera)
-with open("/Lisa/Lisa.csv", "a+", newline ='') as csvfile:
-      wr = csv.writer(csvfile, dialect='excel', delimiter=',', lineterminator=';')
-      wr.writerow(cabecera)
-with open("/Resto/Resto.csv", "a+", newline ='') as csvfile:
-      wr = csv.writer(csvfile, dialect='excel', delimiter=',', lineterminator=';')
-      wr.writerow(cabecera)
-'''
 
 #Bucle que guarda los datos en el csv según el personaje
 while True:
   datos = obtenerPerso()
-  print(datos['character'])
-  print(datos)
-  lst = []
-  lst.extend(datos.values())
-  if (datos['character'] == "Lisa Simpson"):
-    with open("MaggieLevel/Lisa/Lisa.csv", "a+", newline ='') as csvfile:  
-      wr = csv.writer(csvfile, dialect='excel', delimiter=',', lineterminator=';')
-      wr.writerow(lst)
-  if (datos['character'] == "Homer Simpson"):
-    with open("MaggieLevel/Homer/Homer.csv", "a+", newline ='') as csvfile:  
-      wr = csv.writer(csvfile, dialect='excel', delimiter=',', lineterminator=';')
-      wr.writerow(lst)
+
+  my_dict = {'quote':datos['quote']}
+  
+  autor = datos['character']
+
+  print(autor)
+
+  if (autor == "Lisa Simpson"):
+    with open("MaggieLevel/Lisa/Lisa.csv",'a' ) as csvfile:  
+      wr = csv.writer(csvfile, dialect='excel', lineterminator=';')
+      wr.writerow(my_dict.values())
+
+  if (autor == "Homer Simpson"):
+    with open("MaggieLevel/Homer/Homer.csv",'a') as csvfile:  
+      wr = csv.writer(csvfile, dialect='excel', lineterminator=';')
+      wr.writerow(my_dict.values())
+      
   else:
-   with open("MaggieLevel/Resto/Resto.csv", "a+", newline ='') as csvfile:  
-      wr = csv.writer(csvfile, dialect='excel', delimiter=',', lineterminator=';')
-      wr.writerow(lst)
+   with open("MaggieLevel/Resto/Resto.csv", 'a') as csvfile:  
+      wr = csv.writer(csvfile, dialect='excel', lineterminator=';')
+      wr.writerow(my_dict.values())
   time.sleep(30)
