@@ -7,3 +7,9 @@ services:
         ports:
             - 8891:8888
         command: "start-notebook.sh"
+
+    propio: 
+        container_name: "ContenedorQueGeneraDatos"
+        ports:
+            - "8080:80"
+        image: "nuestraImagen"
