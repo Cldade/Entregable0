@@ -35,8 +35,8 @@ while True:
   #Creamos el nombre de la imagen a guardar
   nombreImagen = str(autor) + ".png"
 
-  rutaCSV =  'LisaLevel/' + str(autor) + "/" + str(autor) + ".csv"
-  rutaImagen =  'LisaLevel/' + str(autor) + "/" + str(autor) + ".png"
+  rutaCSV =  'BartLevel/' + str(autor) + "/" + str(autor) + ".csv"
+  rutaImagen =  'BartLevel/' + str(autor) + "/" + str(autor) + ".png"
   
   #Creamos el diccionario que contiene el conteo de cada palabra que vamos leyendo
   valor = my_dict['quote']
@@ -56,8 +56,8 @@ while True:
 
   #Borramos el contenido del csv
   csv_borrar_datos()
-  #Escribimos el diccionario de lapalbra en un csv
-  with open('LisaLevel/Contador.csv', 'w') as f:  
+  #Escribimos el diccionario de la palabra en un csv
+  with open('BartLevel/Contador.csv', 'w') as f:  
     writer = csv.writer(f)
     for k, v in contadorPalabras.items():
        writer.writerow([k, v])
@@ -70,7 +70,7 @@ while True:
     with open(rutaImagen, 'wb') as handler:
       handler.write(imagen)
   except FileNotFoundError:
-    os.mkdir('LisaLevel/' + str(autor))
+    os.mkdir('BartLevel/' + str(autor))
     with open(rutaCSV, 'a') as csvfile:
       wr = csv.writer(csvfile, dialect='excel', lineterminator=';')
       wr.writerow(my_dict.values())

@@ -8,6 +8,11 @@ services:
         ports:
             - "8080:8888"
         volumes:
-            - Prueba:/Carpeta
+            - Prueba:/Prueba
+    my_image:
+        container_name: my_container
+        image: 881ab0b53993
+        volumes:
+            - Prueba:/Prueba
 volumes:
     Prueba:
