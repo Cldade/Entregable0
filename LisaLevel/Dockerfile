@@ -6,5 +6,5 @@ COPY requeriments.txt ./LisaLevel
 
 
 RUN pip install --upgrade pip
-RUN pip install -r ./LisaLevel/requeriments.txt
+RUN pip install -r ./LisaLevel/requirements.txt
 CMD ["python","LisaLevel/main.py"]

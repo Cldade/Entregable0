@@ -78,4 +78,4 @@ while True:
       handler.write(imagen)
       
 
-  time.sleep(2)
+  time.sleep(30)

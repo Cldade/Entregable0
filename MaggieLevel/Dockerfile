@@ -11,5 +11,5 @@ RUN mkdir MaggieLevel/Resto
 RUN touch MaggieLevel/Resto/Resto.csv
 
 RUN pip install --upgrade pip
-RUN pip install -r ./MaggieLevel/requeriments.txt
+RUN pip install -r ./MaggieLevel/requirements.txt
 CMD ["python","MaggieLevel/main.py"]

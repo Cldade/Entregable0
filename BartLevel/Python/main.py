@@ -35,8 +35,8 @@ while True:
   #Creamos el nombre de la imagen a guardar
   nombreImagen = str(autor) + ".png"
 
-  rutaCSV =  'BartLevel/Jupyter/Personajes/' + str(autor) + "/" + str(autor) + ".csv"
-  rutaImagen =  'BartLevel/Jupyter/Personajes/' + str(autor) + "/" + str(autor) + ".png"
+  rutaCSV =  'Personajes/' + str(autor) + "/" + str(autor) + ".csv"
+  rutaImagen =  'Personajes/' + str(autor) + "/" + str(autor) + ".png"
   
   #Creamos el diccionario que contiene el conteo de cada palabra que vamos leyendo
   valor = my_dict['quote']
@@ -57,7 +57,7 @@ while True:
   #Borramos el contenido del csv
   csv_borrar_datos()
   #Escribimos el diccionario de la palabra en un csv
-  with open('BartLevel/Jupyter/Personajes/Contador.csv', 'w') as f:  
+  with open('Personajes/Contador.csv', 'w') as f:  
     writer = csv.writer(f)
     if f.tell() == 0:
             writer.writerow(["Palabra", "Numero"])
@@ -72,7 +72,7 @@ while True:
     with open(rutaImagen, 'wb') as handler:
       handler.write(imagen)
   except FileNotFoundError:
-    os.mkdir('BartLevel/Jupyter/Personajes/' + str(autor))
+    os.mkdir('Personajes/' + str(autor))
     with open(rutaCSV, 'a') as csvfile:
       wr = csv.writer(csvfile, dialect='excel', lineterminator=';')
       wr.writerow(my_dict.values())
@@ -80,4 +80,4 @@ while True:
       handler.write(imagen)
       
 
-  time.sleep(2)
+  time.sleep(30)

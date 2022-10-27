@@ -6,5 +6,5 @@ COPY requeriments.txt ./BartLevel
 
 
 RUN pip install --upgrade pip
-RUN pip install -r ./BartLevel/requeriments.txt
+RUN pip install -r ./BartLevel/requirements.txt
 CMD ["python","BartLevel/main.py"]
