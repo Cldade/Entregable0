@@ -2,7 +2,7 @@ FROM python:3.9.15-slim-buster
 
 RUN mkdir MaggieLevel
 COPY main.py ./MaggieLevel
-COPY requeriments.txt ./MaggieLevel
+COPY requirements.txt ./MaggieLevel
 RUN mkdir MaggieLevel/Homer
 RUN touch MaggieLevel/Homer/Homer.csv
 RUN mkdir MaggieLevel/Lisa

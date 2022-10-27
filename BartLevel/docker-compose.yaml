@@ -4,7 +4,7 @@ services:
         container_name: my_container
         build: ./Python
         volumes:
-            - BartLevel:/app/Personajes/
+            - BartLevel:/BartLevel/Personajes/
     jupyter_lab:
         container_name: jupyter
         build: ./Jupyter      

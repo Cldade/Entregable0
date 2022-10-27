@@ -2,7 +2,7 @@ FROM python:3.9.15-slim-buster
 
 RUN mkdir LisaLevel
 COPY main.py ./LisaLevel
-COPY requeriments.txt ./LisaLevel
+COPY requirements.txt ./LisaLevel
 
 
 RUN pip install --upgrade pip

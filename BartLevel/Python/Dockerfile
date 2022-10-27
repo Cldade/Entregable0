@@ -1,10 +1,9 @@
 FROM python:3.9.15-slim-buster
 
-RUN mkdir BartLevel
-COPY main.py ./BartLevel
-COPY requeriments.txt ./BartLevel
+COPY ./main.py /BartLevel/
+COPY ./requirements.txt /BartLevel/
 
-
+WORKDIR /BartLevel/
 RUN pip install --upgrade pip
-RUN pip install -r ./BartLevel/requirements.txt
-CMD ["python","BartLevel/main.py"]
+RUN pip install -r requirements.txt
+CMD ["python","main.py"]
